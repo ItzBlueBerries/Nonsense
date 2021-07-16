@@ -1,7 +1,0 @@
-*.env
-/node_modules
-TEMPLATE.txt
-NONSENSE_LEVELS.txt
-nonsense.json
-D:\Nonsense\nonCmds\Mines
-package-lock.json
