@@ -1,0 +1,4 @@
+.env
+TEMPLATE.txt
+*.sqlite
+__pycache__
