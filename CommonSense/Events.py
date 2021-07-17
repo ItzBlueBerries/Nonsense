@@ -1,6 +1,12 @@
 import discord
-from discord.ext import commands
 import sqlite3
+import asyncio
+from discord.ext import commands
+from cogwatch import Watcher
+
+async def start_watcher(client):
+    watcher = Watcher(client, path="nonsense")
+    await watcher.start()
 
 class Events(commands.Cog):
 
@@ -11,7 +17,8 @@ class Events(commands.Cog):
     async def on_ready(self):
         nonBase = sqlite3.connect('nonSense.sqlite')
         nonCursor = nonBase.cursor()
-
+        
+        asyncio.create_task(start_watcher(self.client))
         print('Nonsense is online..interesting.')
         statuss = 'Who are you? Who am I? | n?help'
         await self.nonsense.change_presence(activity=discord.Game(statuss))
