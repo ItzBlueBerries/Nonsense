@@ -10,6 +10,11 @@ from discord.ext import commands
 from discord_slash import SlashCommand, SlashContext
 from discord_slash.utils.manage_components import create_button, create_actionrow
 from discord_slash.model import ButtonStyle
+from loggerpy import Logger, Level
+
+# Log Stuff
+
+logger = Logger()
 
 # DotEnv
 

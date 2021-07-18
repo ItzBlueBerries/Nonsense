@@ -18,7 +18,7 @@ class Events(commands.Cog):
         nonBase = sqlite3.connect('nonSense.sqlite')
         nonCursor = nonBase.cursor()
         
-        asyncio.create_task(start_watcher(self.nonsense))
+        await asyncio.create_task(start_watcher(self.nonsense))
         print('Nonsense is online..interesting.')
         statuss = 'Who are you? Who am I? | n?help'
         await self.nonsense.change_presence(activity=discord.Game(statuss))

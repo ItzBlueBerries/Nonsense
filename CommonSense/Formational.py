@@ -13,7 +13,8 @@ class Formational(commands.Cog):
 
         Normalized = discord.Embed(title='Help Command', color=discord.Colour.blue())
 
-        Normalized.add_field(name='Hello', value='Nonsense says hello and gives very little information?')
+        Normalized.add_field(name='Hello', value='`Nonsense says hello and gives very little information?`')
+        Normalized.add_field(name='Advertisement', value='`Things I want to advertise?`')
 
         Formational = discord.Embed(title='Help Command', color=discord.Colour.blue())
 
