@@ -1,6 +1,8 @@
 import discord
 import random
 import AOFKJASKAGJKAGJKAL
+from discord import channel
+from discord import errors
 from discord.ext import commands
 
 class Normalized(commands.Cog):
@@ -45,6 +47,22 @@ class Normalized(commands.Cog):
         embed.add_field(name='Fruitsy Bot Testing Server', value=f'The bot testing server that my creator owns, also where I was created, [link here.]({FBTS})')
 
         await channel.send(embed=embed)
+
+    # @commands.command(aliases=['colour'])
+    # async def color(self, ctx):
+    #     """ Your favorite color I guess? I don't know. """
+
+    #     chan = ctx.channel
+    #     args = None
+
+    #     await chan.send('Whats your favorite color/colour?')
+
+    #     def checkit(me):
+    #         return me.content == f'{args}' and me.channel == chan
+
+    #     okiethenlol = await self.nonsense.wait_for('message', check=checkit)
+
+    #     await chan.send('{} is a cool color/colour I guess.'.format(okiethenlol))
 
 def setup(nonsense):
     nonsense.add_cog(Normalized(nonsense))

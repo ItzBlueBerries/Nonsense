@@ -11,18 +11,24 @@ class Formational(commands.Cog):
     async def help(self, ctx):
         """ Gives you info on everything, I guess? """
 
-        Normalized = discord.Embed(title='Help Command', color=discord.Colour.blue())
+        Normalized = discord.Embed(title='Normalized', color=discord.Colour.blue())
 
         Normalized.add_field(name='Hello', value='`Nonsense says hello and gives very little information?`')
         Normalized.add_field(name='Advertisement', value='`Things I want to advertise?`')
 
-        Formational = discord.Embed(title='Help Command', color=discord.Colour.blue())
+        Formational = discord.Embed(title='Formational', color=discord.Colour.blue())
 
         Formational.add_field(name='Help', value='Gives you info on everything, I guess?')
 
+        Modmissions = discord.Embed(title='Modmissions', color=discord.Colour.blue())
+
+        Modmissions.add_field(name='Kick', value='`Kicks mentioned user?`')
+        Modmissions.add_field(name='Ban', value='`Bans mentioned user?`')
+
         embeds = [
             Formational,
-            Normalized
+            Normalized,
+            Modmissions
         ]
 
         paginator = BotEmbedPaginator(ctx, embeds)

@@ -5,6 +5,7 @@ import aiosqlite3
 import asyncio
 import os
 import sqlite3
+import AOFKJASKAGJKAGJKAL
 from dotenv import load_dotenv, find_dotenv
 from discord.ext import commands
 from discord_slash import SlashCommand, SlashContext
@@ -65,6 +66,32 @@ for filename in os.listdir('./CommonSense'):
 @slash.slash(name='hello', description='Nonsense says hello and gives very little information?', guild_ids=guild_ids)
 async def hello(ctx):
     await ctx.send('Hi? I\'m Nonsense. I assume your not going to leave me alone so just use `n?help` to find my commands, thank you I guess?')
+
+@slash.slash(name='advertisement', description='Things I want to advertise?', guild_ids=guild_ids)
+async def advertisement(ctx):
+
+    # Invite Links
+    VISUAL = 'https://discord.gg/vwZP83zN6b'
+    FBTS = 'https://discord.gg/tWNAUsf5MW'
+
+    # Other Shit
+    colorig = AOFKJASKAGJKAGJKAL.random_color
+
+    channel = ctx.channel
+
+    await channel.send('Are you sure about this? This is advertisment. `(Reply with yes to allow.)`')
+
+    def check(m):
+        return m.content == 'yes' and m.channel == channel
+
+    msg = await nonsense.wait_for('message', check=check)
+
+    embed = discord.Embed(title='Advertisements', description='Advertisements I like advertising?', colour=colorig)
+
+    embed.add_field(name='Visual Discord Code', value=f'This is my creators coding server, they include coding help there along with I also am tested there sometimes, [link here.]({VISUAL})')
+    embed.add_field(name='Fruitsy Bot Testing Server', value=f'The bot testing server that my creator owns, also where I was created, [link here.]({FBTS})')
+
+    await channel.send(embed=embed)
 
 # Button Testing Shit
 
