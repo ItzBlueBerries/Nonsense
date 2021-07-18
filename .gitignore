@@ -2,3 +2,4 @@
 TEMPLATE.txt
 *.sqlite
 __pycache__
+*.pyc
