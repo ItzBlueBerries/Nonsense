@@ -8,6 +8,8 @@ import sqlite3
 from dotenv import load_dotenv, find_dotenv
 from discord.ext import commands
 from discord_slash import SlashCommand, SlashContext
+from discord_slash.utils.manage_components import create_button, create_actionrow
+from discord_slash.model import ButtonStyle
 
 # DotEnv
 
@@ -58,5 +60,17 @@ for filename in os.listdir('./CommonSense'):
 @slash.slash(name='hello', description='Nonsense says hello and gives very little information?', guild_ids=guild_ids)
 async def hello(ctx):
     await ctx.send('Hi? I\'m Nonsense. I assume your not going to leave me alone so just use `n?help` to find my commands, thank you I guess?')
+
+# Button Testing Shit
+
+# @nonsense.command(name='button-test')
+# async def button_test(ctx):
+#     buttons = [
+#         create_button(style=ButtonStyle.blue, label="lol"),
+#         create_button(style=ButtonStyle.green, label="testing bro")
+#     ]
+#     action_row = create_actionrow(*buttons)
+
+#     await ctx.send('ay', components=[action_row])
 
 nonsense.run(NONSENSE_TOKEN)
