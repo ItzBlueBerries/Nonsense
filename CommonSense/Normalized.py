@@ -1,8 +1,7 @@
 import discord
 import random
-
-from discord import colour
 import AOFKJASKAGJKAGJKAL
+from discord import colour
 from discord import channel
 from discord import errors
 from discord.ext import commands
