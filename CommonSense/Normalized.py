@@ -1,5 +1,7 @@
 import discord
 import random
+
+from discord import colour
 import AOFKJASKAGJKAGJKAL
 from discord import channel
 from discord import errors
@@ -63,6 +65,25 @@ class Normalized(commands.Cog):
     #     okiethenlol = await self.nonsense.wait_for('message', check=checkit)
 
     #     await chan.send('{} is a cool color/colour I guess.'.format(okiethenlol))
+
+    @commands.command(aliases=['bot-friends'])
+    async def friends(self, ctx):
+        """ My bot friends. :) """
+        channel = ctx.channel
+
+        await channel.send('Are you sure you wanna know about my bot friends? :)')
+
+        def check(m):
+            return m.content == 'yes' and m.channel == channel
+
+        msg = await self.nonsense.wait_for('message', check=check)
+
+        embed = discord.Embed(title='Bot Friends', description='My ONLY bot friends. :)', colour=AOFKJASKAGJKAGJKAL.random_color)
+
+        embed.add_field(name='The Cool People 😎', 
+                        value='`Tordy Boi`, `Moonikaa`, `AGOTI`, `Solazar`, `Haxe`, `Solazar BETA`, `Trollman`')
+        
+        await ctx.send(embed=embed)
 
 def setup(nonsense):
     nonsense.add_cog(Normalized(nonsense))

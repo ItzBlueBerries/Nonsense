@@ -15,6 +15,7 @@ class Formational(commands.Cog):
 
         Normalized.add_field(name='Hello', value='`Nonsense says hello and gives very little information?`')
         Normalized.add_field(name='Advertisement', value='`Things I want to advertise?`')
+        Normalized.add_field(name='Friends', value='`My bot friends. :)`')
 
         Formational = discord.Embed(title='Formational', color=discord.Colour.blue())
 
